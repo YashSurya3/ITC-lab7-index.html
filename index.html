@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mad Libs Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Creative Mad Libs</h1>
+      <form action="/ITC505/lab-7/index.html" method="POST">
+        <label for="noun">Enter a Noun:</label>
+        <input type="text" id="noun" name="noun" required /><br /><br />
+
+        <label for="verb">Enter a Verb:</label>
+        <input type="text" id="verb" name="verb" required /><br /><br />
+
+        <label for="adjective">Enter an Adjective:</label>
+        <input
+          type="text"
+          id="adjective"
+          name="adjective"
+          required
+        /><br /><br />
+
+        <label for="adverb">Enter an Adverb:</label>
+        <input type="text" id="adverb" name="adverb" required /><br /><br />
+
+        <label for="place">Enter a Place:</label>
+        <input type="text" id="place" name="place" required /><br /><br />
+
+        <button type="submit">Create Story</button>
+      </form>
+
+      <section class="notes">
+        <h2>Project Notes</h2>
+
+        <h3>Backend Configuration</h3>
+        <p>
+          An Express.js server powers this app, enabling static file hosting and
+          form data handling. Middleware like
+          <code>express.urlencoded</code> was used to extract form data, and
+          <code>morgan</code> aids in logging requests.
+        </p>
+
+        <h3>Interface Elements</h3>
+        <p>
+          The form features five inputs—noun, verb, adjective, adverb, and
+          location—all required to ensure full interaction.
+        </p>
+
+        <h3>Data Processing</h3>
+        <p>
+          The <code>/ITC505/lab-7/index.html</code> POST endpoint verifies all
+          entries before producing a personalized story. Missing data prompts
+          users to return and complete the form.
+        </p>
+
+        <h3>Styling and Presentation</h3>
+        <p>
+          CSS was used to create a clean, responsive layout that highlights both
+          form usability and readability.
+        </p>
+
+        <h3>Testing and Validation</h3>
+        <p>
+          The system was evaluated for correct form operation, response
+          handling, and display of the last modification date.
+        </p>
+      </section>
+
+      <footer>
+        <p>Page last modified on: <span id="lastModified"></span></p>
+      </footer>
+    </main>
+    <script>
+      document.getElementById("lastModified").textContent =
+        document.lastModified;
+    </script>
+  </body>
+</html>
